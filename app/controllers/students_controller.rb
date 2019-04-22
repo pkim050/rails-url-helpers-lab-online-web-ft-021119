@@ -10,11 +10,13 @@ class StudentsController < ApplicationController
 
   def activate
     @student = set_student
-    if @student.active == true
+    binding.pry
+    if @student.active
       @student.active = false
     else
       @student.active = true
     end
+    binding.pry
     redirect_to student_path(@student)
   end
 
